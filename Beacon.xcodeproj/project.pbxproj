@@ -24,25 +24,25 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		AE81FE4F304E47D5008483D1 /* Finder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Finder.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		AE81FE5C304E47D7008483D1 /* FinderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AE81FE66304E47D7008483D1 /* FinderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE81FE4F304E47D5008483D1 /* Beacon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Beacon.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE81FE5C304E47D7008483D1 /* BeaconTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeaconTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE81FE66304E47D7008483D1 /* BeaconUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeaconUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		AE81FE51304E47D5008483D1 /* Finder */ = {
+		AE81FE51304E47D5008483D1 /* Beacon */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Finder;
+			path = Beacon;
 			sourceTree = "<group>";
 		};
-		AE81FE5F304E47D7008483D1 /* FinderTests */ = {
+		AE81FE5F304E47D7008483D1 /* BeaconTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = FinderTests;
+			path = BeaconTests;
 			sourceTree = "<group>";
 		};
-		AE81FE69304E47D7008483D1 /* FinderUITests */ = {
+		AE81FE69304E47D7008483D1 /* BeaconUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = FinderUITests;
+			path = BeaconUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -75,9 +75,9 @@
 		AE81FE46304E47D5008483D1 = {
 			isa = PBXGroup;
 			children = (
-				AE81FE51304E47D5008483D1 /* Finder */,
-				AE81FE5F304E47D7008483D1 /* FinderTests */,
-				AE81FE69304E47D7008483D1 /* FinderUITests */,
+				AE81FE51304E47D5008483D1 /* Beacon */,
+				AE81FE5F304E47D7008483D1 /* BeaconTests */,
+				AE81FE69304E47D7008483D1 /* BeaconUITests */,
 				AE81FE50304E47D5008483D1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -85,9 +85,9 @@
 		AE81FE50304E47D5008483D1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AE81FE4F304E47D5008483D1 /* Finder.app */,
-				AE81FE5C304E47D7008483D1 /* FinderTests.xctest */,
-				AE81FE66304E47D7008483D1 /* FinderUITests.xctest */,
+				AE81FE4F304E47D5008483D1 /* Beacon.app */,
+				AE81FE5C304E47D7008483D1 /* BeaconTests.xctest */,
+				AE81FE66304E47D7008483D1 /* BeaconUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,9 +95,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		AE81FE4E304E47D5008483D1 /* Finder */ = {
+		AE81FE4E304E47D5008483D1 /* Beacon */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AE81FE70304E47D7008483D1 /* Build configuration list for PBXNativeTarget "Finder" */;
+			buildConfigurationList = AE81FE70304E47D7008483D1 /* Build configuration list for PBXNativeTarget "Beacon" */;
 			buildPhases = (
 				AE81FE4B304E47D5008483D1 /* Sources */,
 				AE81FE4C304E47D5008483D1 /* Frameworks */,
@@ -108,18 +108,18 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				AE81FE51304E47D5008483D1 /* Finder */,
+				AE81FE51304E47D5008483D1 /* Beacon */,
 			);
-			name = Finder;
+			name = Beacon;
 			packageProductDependencies = (
 			);
 			productName = Finder;
-			productReference = AE81FE4F304E47D5008483D1 /* Finder.app */;
+			productReference = AE81FE4F304E47D5008483D1 /* Beacon.app */;
 			productType = "com.apple.product-type.application";
 		};
-		AE81FE5B304E47D7008483D1 /* FinderTests */ = {
+		AE81FE5B304E47D7008483D1 /* BeaconTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AE81FE73304E47D7008483D1 /* Build configuration list for PBXNativeTarget "FinderTests" */;
+			buildConfigurationList = AE81FE73304E47D7008483D1 /* Build configuration list for PBXNativeTarget "BeaconTests" */;
 			buildPhases = (
 				AE81FE58304E47D7008483D1 /* Sources */,
 				AE81FE59304E47D7008483D1 /* Frameworks */,
@@ -131,18 +131,18 @@
 				AE81FE5E304E47D7008483D1 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				AE81FE5F304E47D7008483D1 /* FinderTests */,
+				AE81FE5F304E47D7008483D1 /* BeaconTests */,
 			);
-			name = FinderTests;
+			name = BeaconTests;
 			packageProductDependencies = (
 			);
 			productName = FinderTests;
-			productReference = AE81FE5C304E47D7008483D1 /* FinderTests.xctest */;
+			productReference = AE81FE5C304E47D7008483D1 /* BeaconTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		AE81FE65304E47D7008483D1 /* FinderUITests */ = {
+		AE81FE65304E47D7008483D1 /* BeaconUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AE81FE76304E47D7008483D1 /* Build configuration list for PBXNativeTarget "FinderUITests" */;
+			buildConfigurationList = AE81FE76304E47D7008483D1 /* Build configuration list for PBXNativeTarget "BeaconUITests" */;
 			buildPhases = (
 				AE81FE62304E47D7008483D1 /* Sources */,
 				AE81FE63304E47D7008483D1 /* Frameworks */,
@@ -154,13 +154,13 @@
 				AE81FE68304E47D7008483D1 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				AE81FE69304E47D7008483D1 /* FinderUITests */,
+				AE81FE69304E47D7008483D1 /* BeaconUITests */,
 			);
-			name = FinderUITests;
+			name = BeaconUITests;
 			packageProductDependencies = (
 			);
 			productName = FinderUITests;
-			productReference = AE81FE66304E47D7008483D1 /* FinderUITests.xctest */;
+			productReference = AE81FE66304E47D7008483D1 /* BeaconUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -186,7 +186,7 @@
 					};
 				};
 			};
-			buildConfigurationList = AE81FE4A304E47D5008483D1 /* Build configuration list for PBXProject "Finder" */;
+			buildConfigurationList = AE81FE4A304E47D5008483D1 /* Build configuration list for PBXProject "Beacon" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -200,9 +200,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AE81FE4E304E47D5008483D1 /* Finder */,
-				AE81FE5B304E47D7008483D1 /* FinderTests */,
-				AE81FE65304E47D7008483D1 /* FinderUITests */,
+				AE81FE4E304E47D5008483D1 /* Beacon */,
+				AE81FE5B304E47D7008483D1 /* BeaconTests */,
+				AE81FE65304E47D7008483D1 /* BeaconUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -258,12 +258,12 @@
 /* Begin PBXTargetDependency section */
 		AE81FE5E304E47D7008483D1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = AE81FE4E304E47D5008483D1 /* Finder */;
+			target = AE81FE4E304E47D5008483D1 /* Beacon */;
 			targetProxy = AE81FE5D304E47D7008483D1 /* PBXContainerItemProxy */;
 		};
 		AE81FE68304E47D7008483D1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = AE81FE4E304E47D5008483D1 /* Finder */;
+			target = AE81FE4E304E47D5008483D1 /* Beacon */;
 			targetProxy = AE81FE67304E47D7008483D1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -398,6 +398,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Beacon uses your location to show reports near you and centre the map on your neighbourhood. Your location is never shared with other users.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -442,6 +443,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Beacon uses your location to show reports near you and centre the map on your neighbourhood. Your location is never shared with other users.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -494,7 +496,7 @@
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Finder.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Finder";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Beacon.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Beacon";
 				XROS_DEPLOYMENT_TARGET = 26.5;
 			};
 			name = Debug;
@@ -520,7 +522,7 @@
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Finder.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Finder";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Beacon.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Beacon";
 				XROS_DEPLOYMENT_TARGET = 26.5;
 			};
 			name = Release;
@@ -578,7 +580,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		AE81FE4A304E47D5008483D1 /* Build configuration list for PBXProject "Finder" */ = {
+		AE81FE4A304E47D5008483D1 /* Build configuration list for PBXProject "Beacon" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AE81FE6E304E47D7008483D1 /* Debug */,
@@ -587,7 +589,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AE81FE70304E47D7008483D1 /* Build configuration list for PBXNativeTarget "Finder" */ = {
+		AE81FE70304E47D7008483D1 /* Build configuration list for PBXNativeTarget "Beacon" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AE81FE71304E47D7008483D1 /* Debug */,
@@ -596,7 +598,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AE81FE73304E47D7008483D1 /* Build configuration list for PBXNativeTarget "FinderTests" */ = {
+		AE81FE73304E47D7008483D1 /* Build configuration list for PBXNativeTarget "BeaconTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AE81FE74304E47D7008483D1 /* Debug */,
@@ -605,7 +607,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AE81FE76304E47D7008483D1 /* Build configuration list for PBXNativeTarget "FinderUITests" */ = {
+		AE81FE76304E47D7008483D1 /* Build configuration list for PBXNativeTarget "BeaconUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AE81FE77304E47D7008483D1 /* Debug */,

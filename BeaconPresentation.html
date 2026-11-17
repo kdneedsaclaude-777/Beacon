@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beacon — Community Presentation</title>
+<style>
+  :root {
+    --navy: #12161C;
+    --navy2: #1B2940;
+    --surface: #1E242D;
+    --teal: #4DB6AC;
+    --teal-deep: #00695C;
+    --amber: #D4A24E;
+    --cream: #FAFAF7;
+    --text: #F2F2F0;
+    --muted: #B5BAC2;
+    --red: #C0392B;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { height: 100%; background: var(--navy); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+
+  .slide {
+    display: none;
+    width: 100vw; height: 100vh;
+    padding: 6vh 8vw;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--text);
+    background: radial-gradient(ellipse at 50% 115%, rgba(77,182,172,0.18) 0%, transparent 55%),
+                linear-gradient(180deg, var(--navy2) 0%, var(--navy) 70%);
+    position: relative;
+    overflow: hidden;
+  }
+  .slide.active { display: flex; }
+
+  /* beacon beam motif on every slide */
+  .slide::before {
+    content: "";
+    position: absolute; left: 50%; bottom: -10vh;
+    width: 14vw; height: 55vh;
+    transform: translateX(-50%);
+    background: linear-gradient(to top, rgba(77,182,172,0.10), transparent);
+    clip-path: polygon(35% 100%, 65% 100%, 100% 0%, 0% 0%);
+    pointer-events: none;
+  }
+
+  .kicker {
+    color: var(--teal);
+    font-size: 1.4rem; font-weight: 700;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    margin-bottom: 1.2rem;
+  }
+  h1 { font-size: 4.6rem; font-weight: 800; line-height: 1.08; margin-bottom: 1.4rem; }
+  h2 { font-size: 3.4rem; font-weight: 800; line-height: 1.12; margin-bottom: 2.4rem; }
+  .lead { font-size: 1.9rem; color: var(--muted); line-height: 1.5; max-width: 32ch; }
+  .accent { color: var(--teal); }
+  .warm { color: var(--amber); }
+
+  .gem { font-size: 5.2rem; margin-bottom: 1.6rem; filter: drop-shadow(0 0 26px rgba(77,182,172,0.55)); }
+
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem 2.2rem; }
+  .grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.6rem; }
+
+  .card {
+    background: rgba(30,36,45,0.85);
+    border: 1px solid rgba(77,182,172,0.22);
+    border-radius: 18px;
+    padding: 1.6rem 1.8rem;
+  }
+  .card .emoji { font-size: 2.4rem; display: block; margin-bottom: 0.7rem; }
+  .card h3 { font-size: 1.55rem; margin-bottom: 0.45rem; }
+  .card p { font-size: 1.25rem; color: var(--muted); line-height: 1.45; }
+
+  .big-list { list-style: none; font-size: 2rem; line-height: 1.6; }
+  .big-list li { margin-bottom: 1.3rem; padding-left: 3.2rem; position: relative; }
+  .big-list li::before { content: "💠"; position: absolute; left: 0; font-size: 1.7rem; }
+
+  .steps { display: flex; gap: 2rem; margin-top: 1rem; }
+  .step { flex: 1; text-align: center; }
+  .step .num {
+    width: 4.4rem; height: 4.4rem; border-radius: 50%;
+    background: var(--teal-deep); color: white;
+    font-size: 2.1rem; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 1.1rem;
+    box-shadow: 0 0 24px rgba(77,182,172,0.4);
+  }
+  .step .icon { font-size: 3.4rem; display: block; margin-bottom: 0.8rem; }
+  .step h3 { font-size: 1.7rem; margin-bottom: 0.5rem; }
+  .step p { font-size: 1.3rem; color: var(--muted); line-height: 1.4; }
+
+  .banner-demo {
+    background: #8E1B1B; color: white;
+    font-size: 1.6rem; font-weight: 700;
+    border-radius: 14px; padding: 1.1rem 1.6rem;
+    display: inline-flex; align-items: center; gap: 0.9rem;
+    margin-top: 1.6rem;
+  }
+
+  .promise {
+    font-size: 2.6rem; font-weight: 800; line-height: 1.35;
+    border-left: 8px solid var(--teal);
+    padding-left: 2rem; max-width: 26ch;
+  }
+
+  .footer-note {
+    position: absolute; bottom: 3.2vh; left: 8vw; right: 8vw;
+    display: flex; justify-content: space-between;
+    color: rgba(181,186,194,0.55); font-size: 1.05rem;
+  }
+
+  .contact {
+    font-size: 2.1rem; margin-top: 2rem; line-height: 1.7;
+  }
+  .contact b { color: var(--teal); }
+
+  .counter {
+    position: fixed; bottom: 2.4vh; right: 2.6vw;
+    color: rgba(181,186,194,0.6); font-size: 1.1rem; z-index: 10;
+    font-variant-numeric: tabular-nums;
+  }
+  .hint {
+    position: fixed; bottom: 2.4vh; left: 2.6vw;
+    color: rgba(181,186,194,0.45); font-size: 1.05rem; z-index: 10;
+  }
+
+  @media print {
+    .slide { display: flex !important; page-break-after: always; height: 100vh; }
+    .counter, .hint { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- 1 · TITLE -->
+<section class="slide active">
+  <div class="gem">💠</div>
+  <h1>Beacon</h1>
+  <p class="lead" style="font-size:2.3rem; color:var(--text); max-width: 40ch;">See your neighbourhood clearly.</p>
+  <p class="lead" style="margin-top:1.4rem;">A free community safety app, built for our neighbourhood — by a neighbour.</p>
+  <div class="footer-note"><span>Created by KDragon</span><span>kdneedsaclaude@gmail.com</span></div>
+</section>
+
+<!-- 2 · THE PROBLEM -->
+<section class="slide">
+  <p class="kicker">The problem</p>
+  <h2>We find out about things <span class="warm">too late</span></h2>
+  <ul class="big-list">
+    <li>A car gets broken into — the street hears about it <b>days later</b>, if at all</li>
+    <li>A scam caller works through the phone book — <b>nobody warns the next person</b></li>
+    <li>Word travels through group chats some neighbours <b>aren't in</b> — especially seniors</li>
+  </ul>
+</section>
+
+<!-- 3 · WHAT BEACON IS -->
+<section class="slide">
+  <p class="kicker">The idea</p>
+  <h2>One shared map, <span class="accent">by neighbours, for neighbours</span></h2>
+  <ul class="big-list">
+    <li>See recent incidents near you — thefts, break-ins, scams, suspicious activity</li>
+    <li>Post what you saw in under a minute — <b>anonymously</b></li>
+    <li>Get the picture for <b>your own street</b>, not the whole city</li>
+  </ul>
+  <p class="lead" style="margin-top:2rem; font-weight:700; color:var(--teal); max-width:100%;">Awareness, not alarm. Beacon informs — it never replaces 911.</p>
+</section>
+
+<!-- 4 · HOW IT WORKS -->
+<section class="slide">
+  <p class="kicker">How it works</p>
+  <h2>Three things, all simple</h2>
+  <div class="steps">
+    <div class="step">
+      <span class="icon">🗺</span>
+      <div class="num">1</div>
+      <h3>Look</h3>
+      <p>A map of your area. Prefer words to maps? Switch to a big-print list.</p>
+    </div>
+    <div class="step">
+      <span class="icon">✍️</span>
+      <div class="num">2</div>
+      <h3>Report</h3>
+      <p>Six easy questions, one at a time. There's even a practice mode to learn on.</p>
+    </div>
+    <div class="step">
+      <span class="icon">👁</span>
+      <div class="num">3</div>
+      <h3>Confirm</h3>
+      <p>Saw the same thing? Tap "I saw this too" — no duplicate posts needed.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 5 · BUILT FOR SENIORS -->
+<section class="slide">
+  <p class="kicker">Designed senior-first</p>
+  <h2>If your grandma can't use it,<br><span class="accent">we built it wrong</span></h2>
+  <div class="grid">
+    <div class="card"><span class="emoji">🔠</span><h3>Big everything</h3><p>Large text, large buttons, adjustable sizes, high-contrast and night modes.</p></div>
+    <div class="card"><span class="emoji">🗣</span><h3>Plain language</h3><p>"Break-in," not "B&E." Spelled-out dates. No jargon anywhere.</p></div>
+    <div class="card"><span class="emoji">🎓</span><h3>Learn by doing</h3><p>A guided tour plus a practice report that posts nothing — learn without fear.</p></div>
+    <div class="card"><span class="emoji">♿️</span><h3>Works with VoiceOver</h3><p>Fully usable without seeing the screen, and with shaky hands.</p></div>
+  </div>
+</section>
+
+<!-- 6 · SAFETY TOOLKIT -->
+<section class="slide">
+  <p class="kicker">More than a map</p>
+  <h2>A safety toolkit in your pocket</h2>
+  <div class="grid3">
+    <div class="card"><span class="emoji">🚨</span><h3>One-tap 911</h3><p>Always on screen. One tap dials — no menus in between.</p></div>
+    <div class="card"><span class="emoji">🚶</span><h3>Walk Timer</h3><p>"I'm heading home." If you don't check in, one tap texts family your location.</p></div>
+    <div class="card"><span class="emoji">📞</span><h3>Scam Shield</h3><p>Neighbours share active phone & door scams — so the next call fools no one.</p></div>
+    <div class="card"><span class="emoji">🌅</span><h3>Daily check-in</h3><p>An optional daily "I'm OK" reminder, at whatever time suits you.</p></div>
+    <div class="card"><span class="emoji">📖</span><h3>Safety guide 40+</h3><p>Big-print advice on scams, door safety, and getting help — no shame, ever.</p></div>
+    <div class="card"><span class="emoji">📊</span><h3>Your area, in plain words</h3><p>"4 reports this week — fewer than last week." Charts with captions.</p></div>
+  </div>
+  <div class="banner-demo">📞 Emergency? Call 911</div>
+</section>
+
+<!-- 7 · BUILT KIND -->
+<section class="slide">
+  <p class="kicker">Built kind, on purpose</p>
+  <h2>Safety apps can go wrong.<br>Beacon is designed <span class="accent">not to.</span></h2>
+  <div class="grid">
+    <div class="card"><span class="emoji">🤝</span><h3>Actions, not appearance</h3><p>Reports describe what happened — never race, ethnicity, or how someone looks.</p></div>
+    <div class="card"><span class="emoji">🔒</span><h3>Privacy protected</h3><p>No exact addresses allowed. Locations round to the block. Reports are anonymous.</p></div>
+    <div class="card"><span class="emoji">🧹</span><h3>Real moderation</h3><p>Bad language is blocked automatically. Three strikes removes posting. Neighbours can flag anything.</p></div>
+    <div class="card"><span class="emoji">🚫</span><h3>No comment wars</h3><p>No comment sections — that's where neighbourhood apps turn nasty. And your data is never sold. Ever.</p></div>
+  </div>
+</section>
+
+<!-- 8 · FOR FAMILIES -->
+<section class="slide">
+  <p class="kicker">For the whole family</p>
+  <h2>Grandkids to grandparents</h2>
+  <ul class="big-list">
+    <li><b>Age-fitted experience</b> — we ask an age group, never a birthday</li>
+    <li><b>Family filter</b> — harsh words are blurred if little eyes glance at the screen</li>
+    <li><b>Under-13 explorer mode</b> — kids can look and learn, but can't post</li>
+    <li><b>Age-matched safety tips</b> — walking-to-school tips for kids, scam defence for seniors</li>
+  </ul>
+</section>
+
+<!-- 9 · PRIVACY PROMISE -->
+<section class="slide">
+  <p class="kicker">Our promise</p>
+  <div class="promise">
+    No ads.<br>
+    No trackers.<br>
+    No accounts or emails.<br>
+    Your location is never shared.<br>
+    Your data is <span class="accent">never sold — ever.</span>
+  </div>
+  <p class="lead" style="margin-top:2.4rem;">Beacon has no server of its own — reports live in Apple's encrypted iCloud, and your profile never leaves your phone.</p>
+</section>
+
+<!-- 10 · WHERE WE ARE -->
+<section class="slide">
+  <p class="kicker">Where we are</p>
+  <h2>Built, tested, and <span class="accent">ready to pilot</span></h2>
+  <div class="steps">
+    <div class="step"><span class="icon">✅</span><h3>Today</h3><p>App fully built and tested. Works on any iPhone.</p></div>
+    <div class="step"><span class="icon">🧪</span><h3>Next month</h3><p>Community pilot via Apple TestFlight — free, safe, easy to install from a link.</p></div>
+    <div class="step"><span class="icon">🚀</span><h3>After the pilot</h3><p>Your feedback shapes v2 — then the App Store, neighbourhood alerts, and French.</p></div>
+  </div>
+</section>
+
+<!-- 11 · THE ASK -->
+<section class="slide">
+  <p class="kicker">What we're asking</p>
+  <h2>Help us test it — <span class="accent">30 neighbours</span></h2>
+  <ul class="big-list">
+    <li>Use Beacon for <b>2–3 weeks</b> on your iPhone (we'll help you install it)</li>
+    <li>Tell us what's confusing, what's missing, what you'd change</li>
+    <li>Seniors especially wanted — <b>you are who this is built for</b></li>
+  </ul>
+  <p class="contact">Sign up today or email <b>kdneedsaclaude@gmail.com</b></p>
+</section>
+
+<!-- 12 · THANK YOU -->
+<section class="slide" style="text-align:center; align-items:center;">
+  <div class="gem">💠</div>
+  <h1>Thank you</h1>
+  <p class="lead" style="max-width:100%; font-size:2.2rem;">Questions? Come try the app on my phone right now.</p>
+  <p class="contact"><b>Beacon</b> · created by KDragon · <b>kdneedsaclaude@gmail.com</b></p>
+</section>
+
+<div class="counter"><span id="cur">1</span> / <span id="total">12</span></div>
+<div class="hint">→ next · ← back · F fullscreen</div>
+
+<script>
+  const slides = document.querySelectorAll(".slide");
+  let index = 0;
+  document.getElementById("total").textContent = slides.length;
+
+  function show(next) {
+    index = Math.max(0, Math.min(slides.length - 1, next));
+    slides.forEach((slide, slideIndex) => slide.classList.toggle("active", slideIndex === index));
+    document.getElementById("cur").textContent = index + 1;
+  }
+
+  document.addEventListener("keydown", (event) => {
+    if (["ArrowRight", " ", "PageDown"].includes(event.key)) show(index + 1);
+    else if (["ArrowLeft", "PageUp"].includes(event.key)) show(index - 1);
+    else if (event.key.toLowerCase() === "f") document.documentElement.requestFullscreen?.();
+  });
+  document.addEventListener("click", (event) => {
+    if (event.clientX > window.innerWidth / 2) show(index + 1); else show(index - 1);
+  });
+</script>
+</body>
+</html>
